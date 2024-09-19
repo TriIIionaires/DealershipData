@@ -76,7 +76,7 @@ namespace DealershipData.Models
         public Transmissions Transmission { get; set; }
         public int Gears { get; set; }
         public FuelTypes Fuel { get; set; }
-
+        
         public override string ToString()
         {
             string output;
@@ -105,7 +105,7 @@ namespace DealershipData.Models
                 output += $"({DriveTrain})\nPower: {Horsepower} hp @ {RPM} rpm\n";
             }
 
-            if (Transmission == Transmissions.CVT || Transmission == Transmissions.eCVT || Transmission == Transmissions.Direct_Drive) //Excludes Gears
+            if (Transmission == Transmissions.CVT || Transmission == Transmissions.eCVT || Transmission == Transmissions.Direct_Drive) //Excludes Gears for CVTs, eCVTs, and Direct Drive
             {
                 output += $"Transmission: {Transmission.ToString().Replace("_", "-")}\n";
             } else
